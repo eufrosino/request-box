@@ -101,7 +101,7 @@ app.get('/:path/inspect', async (req, res) => {
       }
     })
     res.render('inspectBox', {
-      'id': `https://www.eufrosino.com/${url}`,
+      'id': `${req.headers.host}/${url}`,
       'ttl': convertSecs(ttl),
       'requests': boxRequests
     })
