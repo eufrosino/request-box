@@ -35,12 +35,12 @@ function alphanumeric() {
 // Convert Redis TTL from seconds to dd:hh:mm:ss
 function convertSecs(secs) {
   let d = secs / 86400 | 0;
-  let H = (secs % 86400) / 3600 | 0;
+  let h = (secs % 86400) / 3600 | 0;
   let m = (secs % 3600) / 60 | 0;
   let s = secs % 60;
-  let z = n => (n < 10? '0' : '') + n;
+  let z = (n) => (n < 10? '0' : '') + n;
   if (s < 0) { return 'Expired' }
-  return `${d} day(s), ${z(H)} hour(s), ${z(m)} min(s), ${z(s)} sec(s)`;
+  return `${d} day(s), ${z(h)} hour(s), ${z(m)} min(s), ${z(s)} sec(s)`;
 }
 
 // Initialize a box
